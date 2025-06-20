@@ -82,7 +82,7 @@ Main script: [`facial_recognition_hardware.py`](facial_recognition_hardware.py)
 
 * Uses `face_recognition`, `OpenCV`, and `picamera2`
 * Matches faces in the camera feed to authorized encodings
-* Communicates with Arduino over `/dev/ttyUSB0` using `pyserial`
+* Communicates with Arduino over `/dev/ttyACM0` using `pyserial`
 
 Training image capture script: [`image_capture.py`](image_capture.py)
 
