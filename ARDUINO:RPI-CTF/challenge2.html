@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flag 2 - Challenge</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00FF00;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      margin-bottom: 1rem;
+      filter: brightness(1.2) contrast(1.1);
+    }
+
+    p {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      background-color: #000;
+      color: #00FF00;
+      border: 1px solid #00FF00;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    input::placeholder {
+      color: #0f0;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #00FF00;
+    }
+
+    code {
+      background-color: #111;
+      padding: 4px 6px;
+      border: 1px solid #00FF00;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    a.challenge-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #00FF00;
+      text-decoration: underline;
+    }
+
+    a.challenge-link:hover {
+      color: #0f0;
+      text-shadow: 0 0 10px #0f0;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    🔍 Challenge Instructions:
+
+    To find the IP address of the Raspberry Pi, use the following steps:
+
+    1. Open Terminal for Mac or Command Prompt for Windows
+    2. Run: ping raspberrypi-cits.local
+    3. The IP address will appear in the ping response.
+
+    Once you have the IP address, enter it in the box below.
+    If correct, you'll be prompted with credentials to SSH into the Pi using:
+
+    Then run the command:
+    python3 arduino.py
+  -->
+
+  <img src="https://download.logo.wine/logo/Raspberry_Pi/Raspberry_Pi-Logo.wine.png" alt="Raspberry Pi Logo">
+  <p>👀 Look around, inspect the scene…</p>
+
+  <input type="text" id="ipInput" placeholder="Enter Raspberry Pi IP">
+  <div id="result"></div>
+
+  <script>
+    const _ip = String.fromCharCode(49,57,50,46,49,54,56,46,52,48,46,50,48,55);
+    const _user = String.fromCharCode(99,105,116,115,45,97,100,109,105,110); 
+    const _pass = String.fromCharCode(99,105,116,115,114,117,108,101,115); 
+  
+    function checkIP() {
+      const ip = document.getElementById("ipInput").value.trim();
+      const result = document.getElementById("result");
+  
+      if (ip === _ip) {
+        const flag = "ZmxhZ3twajJhcmR1fQ==";  
+        const flagTwo = atob(flag);  
+
+        result.innerHTML = `
+          🔐 SSH Command:<br>
+          <code>ssh ${_user}@${_ip}</code><br>
+          Password: <code>${_pass}</code><br><br>
+          🖥️ Once connected, run:<br>
+          <code>python arduino.py</code><br><br>
+          ✅ Flag found: <strong>${flagTwo}</strong><br>
+          📝 Copy it — you’ll need it later!<br><br>
+          <a class="challenge-link" href="challenge3.html">➡️ Proceed to Challenge 3</a>
+        `;
+      } else {
+        result.textContent = "❌ Incorrect IP! Try again.";
+      }
+    }
+  
+    document.getElementById("ipInput").addEventListener("change", checkIP);
+  </script>
+   
+</body>
+</html>
