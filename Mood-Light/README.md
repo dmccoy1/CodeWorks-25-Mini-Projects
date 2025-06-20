@@ -27,6 +27,8 @@ A responsive Arduino-based mood light that automatically adjusts its colors and 
 
 ---
 
+<img width="777" alt="Screenshot 2025-06-20 at 1 11 06 PM" src="https://github.com/user-attachments/assets/97680821-39b8-4560-bc95-f5bab3b4ee1c" />
+
 ## How It Works
 
 1. The LDR reads the ambient light level and sends a value to the Arduino.
