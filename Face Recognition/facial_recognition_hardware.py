@@ -19,7 +19,7 @@ picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888',
 picam2.start()
 
 # Initialize Serial Communication to Arduino
-arduino = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # Adjust to your port
+arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=1)  # Adjust to your port
 time.sleep(2)  # Wait for Arduino to initialize
 
 # Initialize variables
