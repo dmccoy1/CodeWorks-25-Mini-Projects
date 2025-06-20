@@ -42,6 +42,8 @@ Both systems feature:
 | Buzzer            | 7           |
 | Button            | 9           |
 
+<img width="554" alt="Screenshot 2025-06-20 at 1 06 52 PM" src="https://github.com/user-attachments/assets/1ee8a223-6a50-4d82-a703-74a0a37c024f" />
+
 ### Behavior:
 
 * System blinks yellow (RGB) while armed.
@@ -68,6 +70,8 @@ Both systems feature:
 | RGB LED (R, G, B) | 3, 5, 6                               |
 | Buzzer            | 7                                     |
 | Button            | 9                                     |
+
+<img width="560" alt="Screenshot 2025-06-20 at 1 06 42 PM" src="https://github.com/user-attachments/assets/a2af8f57-eccf-4607-949f-559c23d08c2f" />
 
 ### Behavior:
 
