@@ -12,13 +12,15 @@ When the temperature rises above a threshold (75°F), an indicator LED lights up
 
 * Arduino Uno
 * TMP36 Temperature Sensor
-* NPN Transistor (e.g., 2N2222 or TIP120)
-* DC Fan (or motor)
+* NPN Transistor TIP120
+* Diode
+* DC Motor
 * Pushbutton
-* 220Ω Resistor (for button)
+* 220Ω Resistor (for LED)
+* 10K Resistor (for button)
 * LED (status indicator)
 * Breadboard and jumper wires
-* External power supply (if required for fan)
+* External 9V power supply 
 
 ---
 
@@ -32,6 +34,8 @@ When the temperature rises above a threshold (75°F), an indicator LED lights up
 | Status LED   | D13         |
 
 ---
+
+![Temperature-Activated Smart Fan ](https://github.com/user-attachments/assets/00850981-cff5-4f20-84eb-d1b4741cf2a8)
 
 ## How It Works
 
