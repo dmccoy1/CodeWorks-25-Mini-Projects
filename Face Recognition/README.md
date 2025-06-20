@@ -92,23 +92,7 @@ Training image capture script: [`image_capture.py`](image_capture.py)
 
 ### Raspberry Pi Setup:
 
-1. Install dependencies:
-
-```bash
-pip3 install face_recognition opencv-python picamera2 imutils pyserial
-```
-
-2. Capture training images:
-
-```bash
-python3 image_capture.py
-```
-
-3. Run facial recognition:
-
-```bash
-python3 facial_recognition_hardware.py
-```
+1. Follow this Guide to setup the Raspberry Pi: [Face Recognition with Raspberry Pi and OpenCV – Core Electronics](https://core-electronics.com.au/guides/raspberry-pi/face-recognition-with-raspberry-pi-and-opencv/)
 
 ### Arduino Setup:
 
@@ -116,5 +100,28 @@ python3 facial_recognition_hardware.py
 2. Connect via USB to the Raspberry Pi
 3. Ensure `Serial.begin(9600)` matches Python serial settings
 
-Based on this guide:
-[Face Recognition with Raspberry Pi and OpenCV – Core Electronics](https://core-electronics.com.au/guides/raspberry-pi/face-recognition-with-raspberry-pi-and-opencv/)
+Wire the Arduino according to the connections below. This setup allows it to control a servo lock, RGB LED feedback, and a buzzer based on commands received from the Raspberry Pi.
+
+### Component Connections
+
+| Component        | Arduino Pin | Notes |
+|------------------|-------------|-------|
+| **Servo Motor**  | D2          | Use external 5V power if needed; signal wire only |
+| **RGB LED**      | Red → D3<br>Green → D5<br>Blue → D6 | Use 220Ω resistors for each color pin|
+| **Piezo Buzzer** | D7          | Positive to D7, negative to GND |
+
+> ⚠️ If using a **common cathode RGB LED**, connect the longest leg to GND. For **common anode**, connect it to 5V and invert PWM values in code.
+
+### Power & Ground
+
+- Connect **5V** from Arduino to:
+  - Servo motor VCC *(or external 5V power supply if servo needs more current)*
+  - RGB LED common anode *(if using common anode type)*
+- Connect **GND** from Arduino to:
+  - Servo motor ground
+  - RGB LED common cathode *(or anode if using 5V)*
+  - Piezo buzzer ground
+
+![Door Unlock System (2)](https://github.com/user-attachments/assets/d742a1cd-a332-4f7f-ba1e-a155ba9b75db)
+
+
